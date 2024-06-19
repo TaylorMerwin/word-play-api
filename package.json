@@ -1,18 +1,29 @@
 {
   "name": "word-play-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "The functionality of Word Play",
+  "main": "src/server.ts",
   "scripts": {
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "dev": "ts-node src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Taylor Merwin",
   "license": "ISC",
   "dependencies": {
     "@types/express": "^4.17.21",
     "express": "^4.19.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.3.2"
   }
 }
