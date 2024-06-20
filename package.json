@@ -13,7 +13,9 @@
   "author": "Taylor Merwin",
   "license": "ISC",
   "dependencies": {
+    "@google/generative-ai": "^0.13.0",
     "@types/express": "^4.17.21",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5"
