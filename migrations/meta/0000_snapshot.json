@@ -52,12 +52,8 @@
           "name": "writing_entry_table_user_id_users_table_user_id_fk",
           "tableFrom": "writing_entry_table",
           "tableTo": "users_table",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "user_id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["user_id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -65,12 +61,8 @@
           "name": "writing_entry_table_writing_prompt_id_writing_prompt_table_prompt_id_fk",
           "tableFrom": "writing_entry_table",
           "tableTo": "writing_prompt_table",
-          "columnsFrom": [
-            "writing_prompt_id"
-          ],
-          "columnsTo": [
-            "prompt_id"
-          ],
+          "columnsFrom": ["writing_prompt_id"],
+          "columnsTo": ["prompt_id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -162,9 +154,7 @@
         "users_table_email_unique": {
           "name": "users_table_email_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
+          "columns": ["email"]
         }
       }
     }
