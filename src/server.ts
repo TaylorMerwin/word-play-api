@@ -4,11 +4,9 @@ import { db } from "./db";
 import {
   GoogleGenerativeAI,
   GoogleGenerativeAIError,
-  HarmBlockThreshold,
-  HarmCategory,
 } from "@google/generative-ai";
 import { promptTable } from "./schema";
-import { InsertPrompt } from "./schema";
+import { InsertPrompt, SelectPrompt } from "./schema";
 
 dotenv.config();
 
@@ -75,6 +73,19 @@ async function generateText(genre: string, theme: string) {
   }
 }
 
+//get random prompt from the database
+async function getAllPrompt() {
+  console.log("Getting all prompts from database...");
+  const result = await db
+    .select({
+      promptText: promptTable.promptText,
+      genre: promptTable.genre,
+      theme: promptTable.theme,
+    })
+    .from(promptTable);
+  return result;
+}
+
 app.get("/", async (req, res) => {
   res.send("hello world");
 });
@@ -96,6 +107,16 @@ app.post("/generate", async (req, res) => {
     } else {
       res.status(500).send("An error occurred while generating text");
     }
+  }
+});
+
+//get all prompts from the database
+app.get("/prompts", async (req, res) => {
+  try {
+    const result = await getAllPrompt();
+    res.json(result);
+  } catch (error) {
+    res.status(500).send("An error occurred while getting prompts");
   }
 });
 
